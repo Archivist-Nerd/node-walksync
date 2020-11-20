@@ -1,0 +1,43 @@
+{
+  "name": "@archivistnerd/walksync",
+  "version": "0.0.1-alpha-201120.0014",
+  "description": "Archivist Nerd's walksync Package",
+  "copy": "Copyright (c) 2020 Archivist-Nerd",
+  "main": "walksync.js",
+  "scripts": {
+    "build": "node_modules/.bin/build.cmd ./src/.build",
+    "example": "node examples/simple.js",
+    "example1": "node examples/simple.js",
+    "example2": "node examples/complicated.js",
+    "test": "node tests/test.js",
+    "pack": "npm pack",
+    "pub": "npm publish --access=public"
+  },
+  "keywords": [
+    "Archivist",
+    "Nerd",
+    "walk",
+    "path",
+    "directory",
+    "folder",
+    "sync"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Archivist-Nerd/node-walksync/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/Archivist-Nerd/node-walksync/issues"
+  },
+  "repository": {
+    "url": "https://github.com/Archivist-Nerd/node-walksync.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "Archivist Nerd",
+    "email": "a.Nerd.Archivist@gmail.com",
+    "url": "https://github.com/Archivist-Nerd"
+  },
+  "devDependencies": {
+    "@archivist/build": "0.0.4",
+    "@archivistnerd/testlib": "^0.1.2"
+  }
+}
