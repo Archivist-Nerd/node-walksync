@@ -88,4 +88,5 @@ if ( describe().length===0 )
 else {
   console.log('\n\n   *** !!!SOME TESTS FAILED!!! ***')
   console.log( describe() )
+  process.exit(1)
 }
