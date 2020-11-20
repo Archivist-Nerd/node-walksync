@@ -1,6 +1,6 @@
 {
   "name": "@archivistnerd/walksync",
-  "version": "0.0.1-alpha-201120.0014",
+  "version": "0.0.1-alpha-201120.1200",
   "description": "Archivist Nerd's walksync Package",
   "copy": "Copyright (c) 2020 Archivist-Nerd",
   "main": "walksync.js",

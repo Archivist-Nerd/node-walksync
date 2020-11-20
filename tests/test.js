@@ -1,4 +1,5 @@
 'use strict';
+const localRequire = true;        //  required from ../src/package or ../.
 /**
  * @test:name        @archivistnerd/walksync/test
  * @test:package     testLib
@@ -6,8 +7,7 @@
  * @test:copyright   Copyright (c) 2020 Archivist-Nerd
  */
 let describe = require('@archivistnerd/testlib').describe
-//  , walksync = require('../src/walksync')
-  , walksync = require('../.')
+  , walksync = require( localRequire? '../src/walksync': '../.' )
   ;
 /**
  * clear the console, and display header
@@ -63,6 +63,19 @@ describe( '--valid functions', it=>{
     let success  = true
       , folderFn = (filename, stats) => success? validFolders(filename):false
       , results  = walksync('./tests/', null, folderFn)
+      ;
+    return success? ( validFiles( results[0] ) && validFiles(results[1]) ):false
+  })
+
+  it('depthLimit=0    ( only current folder )', ()=>{
+    let results  = walksync('./tests/', null, null, 0)
+      ;
+    return ( results.length===1 && results[0] === 'test.js' )
+  })
+  it('depthLimit=1    ( only 1 sub folder deep )', ()=>{
+    let success  = true
+      , folderFn = (filename, stats) => success? validFolders(filename):false
+      , results  = walksync('./tests/', null, folderFn, 1)
       ;
     return success? ( validFiles( results[0] ) && validFiles(results[1]) ):false
   })
