@@ -1,5 +1,6 @@
 # node-walksync
 [![npm version](https://img.shields.io/npm/v/@archivistnerd/walksync.svg)](https://www.npmjs.com/package/@archivistnerd/walksync)
+[![build status](https://api.travis-ci.com/Archivist-Nerd/node-walksync.svg)](https://travis-ci.com/Archivist-Nerd/node-walksync.svg)
 
 Archivist Nerd's walksync Package
 
