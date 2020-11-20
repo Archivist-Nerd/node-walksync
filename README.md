@@ -1,60 +1,65 @@
-# node-testlib
-[![npm version](https://img.shields.io/npm/v/@archivistnerd/testlib.svg)](https://www.npmjs.com/package/@archivistnerd/testlib)
+# node-walksync
+[![npm version](https://img.shields.io/npm/v/@archivistnerd/walksync.svg)](https://www.npmjs.com/package/@archivistnerd/walksync)
 
-Archivist nerd's testlib: A bare minimum node test suite
+Archivist Nerd's walksync Package
 
-> A very small minimilistic test suite for node.
+> A very simple option for recursivly walking the file system
+
+## This Package is in VERY EARLY ALPHA
+> This package subject to change QUICKLY, and possibly Often
 
 ## Installation
 
 ```sh
-npm install -g @archivistnerd/testlib
+npm install --save @archivistnerd/walksync
 ```
 
-## describe/it Example
+## Usage (Simple)
 
-```javascript
-let describe = require('@archivistnerd/testlib').describe;
+```js
+'use strict';
 
-describe( 'test (describe, it)', it=>{
-  it('test-description', ()=>{
-    return true
-  })
+const walksync = require('@archivistnerd/walksync');
 
-  it('test-description 2', ()=>{
-    return true
-  })
-
-  it('test-fail', ()=>{
-    return false
-  })
-
-  it('test-fail (no return value)', ()=>{
-  })
-});
+// List all files in current location (recursivly)
+console.log( walksync('.') )
 ```
 
-## add/exec Example
+## Usage (Complicated)
 
-```javascript
-require('@archivistnerd/testlib')
-        /**
-         * @test:attempt      testlib.add
-         */
-        .add(
-          'testlib.add( name, testFn, resultTestFn)',
-          ()      => ({ works: true }),
-          (result)=> (result.works==true)
-        )
-        /**
-         * @test:attempt      returns true so no need for resultTestFn
-         */
-        .add(
-          'testlib.add( name, testFn )',
-          ()      => true
-        )
+```js
+'use strict';
 
-        .exec();
+const fs       = require('fs')
+    , walksync = require('@archivistnerd/walksync')
+    ;
+let totalFiles = 0
+  , totalFolders = 0
+  , totalFileSize = 0
+  ;
+
+function filesFn( fullpath, basepath, stats){
+  totalFiles++
+  try {
+    let filesize = fs.readFileSync( fullpath ).length
+      ;
+    console.log(`${filesize}\t${fullpath}`)
+    totalFileSize+=filesize
+  }
+  // throw away error if we can't open the file
+  catch (err) {}
+}
+function FoldersFn( fullpath, basepath, stats){
+  totalFolders++
+}
+// List all files in current location (recursivly)
+walksync('.', filesFn, FoldersFn)
+
+console.log({
+  totalFolders,
+  totalFiles,
+  totalFileSize
+})
 ```
 
 ## License
