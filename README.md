@@ -1,6 +1,9 @@
 # node-walksync
+
 [![npm version](https://img.shields.io/npm/v/@archivistnerd/walksync.svg)](https://www.npmjs.com/package/@archivistnerd/walksync)
-[![build status](https://api.travis-ci.com/Archivist-Nerd/node-walksync.svg)](https://travis-ci.com/Archivist-Nerd/node-walksync)
+[![build status](https://api.travis-ci.com/Archivist-Nerd/node-walksync.svg)](https://travis-ci.com/Archivist-Nerd/node-walksync.svg)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Archivist-Nerd/node-walksync.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Archivist-Nerd/node-walksync/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Archivist-Nerd/node-walksync.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Archivist-Nerd/node-walksync/context:javascript)
 
 Archivist Nerd's walksync Package
 

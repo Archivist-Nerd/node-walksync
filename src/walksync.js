@@ -41,13 +41,13 @@ module.exports = function walksync( base='', fileFn, pathFn, depthLimit=-1 ){
                   ['', '', depthLimit]
                 ]
     ;
-  base = base.replace('\\','/') + ( (base.substr(-1)!=='/')? '/':'' )
+  base = base.replace(/\\+/g,'/') + ( (base.substr(-1)!=='/')? '/':'' )
 
   while (folders.length){
     let details  = folders.shift()
       , path     = details[1]
       , depth    = details.pop()
-      , fullPath = (base+path).replace('\\','/')
+      , fullPath = (base+path).replace(/\\+/g,'/')
       ;
     if ( path !== '' && isFunction(pathFn) ) pathFn( ...details )
 

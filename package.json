@@ -1,6 +1,6 @@
 {
   "name": "@archivistnerd/walksync",
-  "version": "0.0.1-alpha-201120.1200",
+  "version": "0.0.3",
   "description": "Archivist Nerd's walksync Package",
   "copy": "Copyright (c) 2020 Archivist-Nerd",
   "main": "walksync.js",
@@ -22,7 +22,7 @@
     "folder",
     "sync"
   ],
-  "license": "MIT",
+  "license": "(MIT or SEE LICENSE IN https://github.com/Archivist-Nerd/node-walksync/blob/main/docs/LICENSE)",
   "homepage": "https://github.com/Archivist-Nerd/node-walksync/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/Archivist-Nerd/node-walksync/issues"
