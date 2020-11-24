@@ -1,5 +1,6 @@
 'use strict';
-const localRequire = true;        //  required from ../src/package or ../.
+const localRequire = true        //  required from ../src/package or ../.
+    ;
 /**
  * @test:name        @archivistnerd/walksync/test
  * @test:package     testLib
